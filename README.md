@@ -55,7 +55,7 @@ su
 * SORRY I DELETED THE SQUID PROXY, please edit this script manually
 
 # Special For OS
-* • Debian 10 & 9
+* • Debian 11, 10 & 9
 or
 * • Ubuntu 18.04 & 20.04
 * • Working For VPS AWS,AZURE,DO,Centerhop
