@@ -5,9 +5,46 @@ y="\033[0;1;37m"
 yy="\033[0;1;32m"
 yl="\033[0;1;33m"
 wh="\033[0m"
-echo -e "$y                  MAIN MENU $wh"
-echo -e "$y            Script Mod By NevermoreSSH $wh"
-echo -e "$y-------------------------------------------------$wh"
+## Foreground
+DEFBOLD='\e[39;1m'
+RB='\e[31;1m'
+GB='\e[32;1m'
+YB='\e[33;1m'
+BB='\e[34;1m'
+MB='\e[35;1m'
+CB='\e[35;1m'
+WB='\e[37;1m'
+#Domain & IPVPS
+domain=$(cat /etc/xray/domain)
+IPVPS=$(curl -s ipinfo.io/ip)
+# OS Uptime
+uptime="$(uptime -p | cut -d " " -f 2-10)"
+# RAM Info
+tram=$(free -m | awk 'NR==2 {print $2}')
+uram=$(free -m | awk 'NR==2 {print $3}')
+# Total BANDWIDTH
+ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
+tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
+echo ""
+echo -e "$y                        MAIN MENU $wh"
+echo -e "$y                Script Mod By NevermoreSSH $wh"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                ${WB} ♦ ️Server Information ♦️ ${NC}             "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
+echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                  ${WB} ♦ ️Total Bandwidth ♦️ ${NC}            "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
+echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "                     ${WB} ♦️ VPS Menu ♦️ ${NC}             "
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "$yy 1$y.  SSH & OpenVPN MENU  $wh"
 echo -e "$yy 2$y.  L2TP MENU$wh"
 echo -e "$yy 3$y.  PPTP MENU$wh"
@@ -24,7 +61,7 @@ echo -e "$yy 13$y. XRAY VERSION$wh"
 echo -e "$yy 14$y. CHECK IP PORT$wh"
 echo -e "$yy 15$y. CHECK SERVICE VPN$wh"
 echo -e "$yy 16$y. UPDATE MENU (Update)$wh"
-echo -e "$yy 17$y. sl-fix (Fix SSLH+WS-TLS Error after reboot)$wh"
+echo -e "$yy 17$y. FIX SSLH+WS-TLS Error after reboot$wh"
 echo -e "$yy 18$y. SETTINGS$wh"
 echo -e "$yy 19$y. CHECK CPU & RAM$wh"
 echo -e "$yy 20$y. CHECK BANDWIDTH$wh"
@@ -32,7 +69,7 @@ echo -e "$yy 21$y. DNS CHANGER$wh"
 echo -e "$yy 22$y. NETFLIX CHECKER$wh"
 echo -e "$yy 23$y. SET AUTOREBOOT$wh"
 echo -e "$yy 24$y. EXIT$wh"
-echo -e "$y-------------------------------------------------$wh"
+echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 read -p "Select From Options [ 1 - 22 ] : " menu
 case $menu in
 1)
