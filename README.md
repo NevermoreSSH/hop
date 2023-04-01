@@ -30,76 +30,38 @@ Mod By NevermoreSSH
 </h2>
 
 
-### Info:
-* PLEASE READ & PRIORITIZE READING
-# THIS IS A SPECIAL SCRIPT FOR CREATING A VPN SERVER
-Create a Fresh VPS or New VPS and you must use User: root
-* ROOT ACCOUNT VPS
-* Login to VPS Users using the root user
-* How to directly enter root access
-
-```html
-sudo su
-```
-OR
-```html
-sudo -i
-```
-OR
-```html
-su
-```
-
 ## ADDITIONAL INFO, PLEASE READ
 * MINIMUM RAM 1 GB TO USE THIS SCRIPT
 * SORRY I DELETED THE SQUID PROXY, please edit this script manually
 
 # Special For OS
-* • Debian 11, 10 & 9
+* • Debian 9, 10 & 11
 or
 * • Ubuntu 18.04 & 20.04
-* • Working For VPS AWS,AZURE,DO,Centerhop
+* • Working For VPS AWS, AZURE, DigitalOcean, Centerhop
 ## Installation 
 ## 1.
-<img src="https://img.shields.io/badge/Update%20_&_%20Upgrade-purple">
+<img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Debian 9,10,11-purple">
 
   ```html
-apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
+apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
+```
+  or
+  
+  <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Ubuntu 18 & 20 LTS-purple">
+
+  ```html
+apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
 ```
   
-## 2.0
-<img src="https://img.shields.io/badge/Login_Root%20VPS-purple">
-
-* Login to VPS and Enable Temporary Root
-
-  
-```html
-sudo su
-cd
-cd
-```
-
-## 2.
-
-  <img src="https://img.shields.io/badge/Create_Access_Root%20VPS-purple">
-
-* Create Root Access on VPS / Root VPS
-* To Allow Root And Change Login Password on VPS Google Cloud Platform, Aws, And Others
-   
-```html
-wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/NevermoreSSH/hop/main/vpsroot.sh && bash vpsroot.sh
-  
-```
-  
-### 3.
+### 2.
 
   <img src="https://img.shields.io/badge/Install_All_Service_VPN%20-purple">
 
 * Install All VPN Service / Install All VPN Service
    
 ```html
-rm -f setup.sh && apt update && apt upgrade -y && update-grub && sleep 2 && apt-get update -y && apt-get upgrade && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/NevermoreSSH/hop/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
-  
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/NevermoreSSH/hop/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 ```
   
 
