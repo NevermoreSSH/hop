@@ -69,7 +69,7 @@ about
 certv2ray
 ;;
 14)
-bbr
+bbr2
 ;;
 15)
 clear
