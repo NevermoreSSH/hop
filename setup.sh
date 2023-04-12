@@ -7,9 +7,6 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
 fi
-MYIP=$(wget -qO- icanhazip.com/ip);
-secs_to_human() {
-    echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minutes $(( ${1} % 60 )) seconds"
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -172,7 +169,6 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""
-secs_to_human "$(($(date +%s) - ${start}))"
 echo ""
 echo " Reboot 15 Sec"
 sleep 15
