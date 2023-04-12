@@ -72,7 +72,7 @@ echo -e "$yy 22$y. NETFLIX CHECKER$wh"
 echo -e "$yy 23$y. SET AUTOREBOOT$wh"
 echo -e "$yy 24$y. EXIT$wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-read -p "Select From Options [ 1 - 22 ] : " menu
+read -p "Select From Options [ 1 - 24 ] : " menu
 case $menu in
 1)
 clear
