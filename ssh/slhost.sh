@@ -19,7 +19,7 @@ mkdir -p /etc/v2ray
 echo "$SUB_DOMAIN" >> /etc/v2ray/domain
 # Input Own domain
 clear
-read -rp "Domain/Host : " -e domain
+read -rp "Add Your Own Domain/Host : " -e domain
 echo "IP=$domain" >>/var/lib/crot/ipvps.conf
 rm -rf /etc/xray/domain
 echo $domain > /etc/xray/domain
