@@ -17,12 +17,19 @@ mkdir -p /usr/bin/v2ray
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
 echo "$SUB_DOMAIN" >> /etc/v2ray/domain
-#
+# Input Own domain
+clear
+read -rp "Domain/Host : " -e domain
+echo "IP=$domain" >>/var/lib/crot/ipvps.conf
+rm -rf /etc/xray/domain
+echo $domain > /etc/xray/domain
+sleep 5
+# Certificate XRAYS
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-DOMAIN=nevermoressh.tech
-SUB_DOMAIN=${sub}.nevermoressh.tech
-NS_DOMAIN=ns-${sub}.nevermoressh.tech
+DOMAIN=$(cat /etc/xray/domain)
+SUB_DOMAIN=${sub}.$DOMAIN
+NS_DOMAIN=ns-$DOMAIN
 CF_ID=nevermoressh@gmail.com
 CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
 set -euo pipefail
