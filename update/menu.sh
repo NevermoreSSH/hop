@@ -16,6 +16,7 @@ CB='\e[35;1m'
 WB='\e[37;1m'
 #Domain & IPVPS
 domain=$(cat /etc/xray/domain)
+sldomain=$(cat /root/nsdomain)
 IPVPS=$(curl -s ipinfo.io/ip)
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
@@ -36,6 +37,7 @@ echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DNS     :  $sldomain ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                  ${WB} ♦️ ️Total Bandwidth ♦️ ${NC}            "
