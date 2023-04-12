@@ -20,3 +20,4 @@ echo "IP=$domain" >>/var/lib/crot/ipvps.conf
 rm -rf /etc/xray/domain
 echo $domain > /etc/xray/domain
 certv2ray
+restart
