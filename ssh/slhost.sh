@@ -28,7 +28,7 @@ sleep 5
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 DOMAIN=$(cat /etc/xray/domain)
-SUB_DOMAIN=${sub}.$DOMAIN
+SUB_DOMAIN=$DOMAIN
 NS_DOMAIN=ns-$DOMAIN
 CF_ID=nevermoressh@gmail.com
 CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
