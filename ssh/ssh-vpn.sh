@@ -446,8 +446,10 @@ wget -O slowdnsmenu "https://raw.githubusercontent.com/NevermoreSSH/hop/main/upd
 wget -O running "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/running.sh"
 wget -O updatemenu "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/updatemenu.sh"
 wget -O sl-fix "https://raw.githubusercontent.com/NevermoreSSH/hop/main/sslh-fix/sl-fix"
+wget -O sl-fix "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns"
 
 chmod +x sl-fix
+chmod +x install-sldns
 chmod +x ipsaya
 chmod +x sshovpnmenu
 chmod +x l2tpmenu
