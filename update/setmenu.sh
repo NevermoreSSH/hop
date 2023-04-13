@@ -67,7 +67,7 @@ info
 about
 ;;
 13)
-certv2ray
+certv2ray && restart
 ;;
 14)
 wget -q -O /usr/bin/install-sldns "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns" && chmod +x /usr/bin/install-sldns && install-sldns && restart
