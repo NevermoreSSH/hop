@@ -147,7 +147,7 @@ sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
-echo -e "$ORANGE Sucessfully XRAY Vless WS Account Deleted !$NC"
+echo -e "$ORANGE Sucessfully XRAY VLESS WS Account Deleted !$NC"
 
 #----- Auto Remove Trojan
 data=( `cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2 | sort | uniq`);
