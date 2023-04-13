@@ -69,7 +69,7 @@ echo -e "$yy 19$y. CHECK CPU & RAM$wh"
 echo -e "$yy 20$y. CHECK BANDWIDTH$wh"
 echo -e "$yy 21$y. DNS CHANGER$wh"
 echo -e "$yy 22$y. NETFLIX CHECKER$wh"
-echo -e "$yy 23$y. REVOME EXPIRED ACCOUNT$wh"
+echo -e "$yy 23$y. DELETE EXPIRED ACCOUNT$wh"
 echo -e "$yy 24$y. EXIT$wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 read -p "Select From Options [ 1 - 24 ] : " menu
