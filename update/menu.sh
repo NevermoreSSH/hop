@@ -58,7 +58,7 @@ echo -e "$yy 8$y.  XRAY VMESS MENU$wh"
 echo -e "$yy 9$y.  XRAY VLESS MENU$wh"
 echo -e "$yy 10$y. XRAY TROJAN MENU$wh"
 echo -e "$yy 11$y. TROJAN GO MENU$wh"
-echo -e "$yy 12$y. XRAY GRPC MENU$wh"
+echo -e "$yy 12$y. INFO ALL PORT$wh"
 echo -e "$yy 13$y. XRAY VERSION$wh"
 echo -e "$yy 14$y. CHECK IP PORT$wh"
 echo -e "$yy 15$y. CHECK SERVICE VPN$wh"
@@ -120,7 +120,7 @@ trgomenu
 ;;
 12)
 clear
-grpcmenu
+info
 ;;
 13)
 clear
