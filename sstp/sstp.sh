@@ -48,13 +48,13 @@ mkdir /home/sstp
 touch /home/sstp/sstp_account
 touch /var/lib/crot/data-user-sstp
 #detail nama perusahaan
-country=ID
-state=Indonesia
-locality=Indonesia
-organization=infinity
-organizationalunit=infinity
-commonname=cdn.covid19.go.id
-email=hayuk69@gmail.com
+country=MY
+state=Kuala_Lumpur
+locality=Kuala_Lumpur
+organization=none
+organizationalunit=none
+commonname=none
+email=elliez667@gmail.com
 
 #install sstp
 apt-get install -y build-essential cmake gcc linux-headers-`uname -r` git libpcre3-dev libssl-dev liblua5.1-0-dev ppp
