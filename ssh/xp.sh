@@ -247,6 +247,7 @@ sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
 fi
 done
+echo -e "$ORANGE Sucessfully XRAY VMESS WS Account Deleted !$NC"
 
 #----- Auto Remove Vless
 data=( `cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2 | sort | uniq`);
@@ -262,6 +263,7 @@ sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
+echo -e "$ORANGE Sucessfully XRAY Vless WS Account Deleted !$NC"
 
 #----- Auto Remove Trojan
 data=( `cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2 | sort | uniq`);
@@ -277,6 +279,7 @@ sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
 fi
 done
+echo -e "$ORANGE Sucessfully XRAY TROJAN WS Account Deleted !$NC"
 
 #----- Auto Remove Trojan GO
 data=( `cat /etc/trojan-go/akun.conf | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
@@ -291,3 +294,4 @@ if [[ "$exp2" -le "0" ]]; then
 sed -i "/^### $user $exp/,/^},{/d" /etc/trojan-go/akun.conf
 fi
 done
+echo -e "$ORANGE Sucessfully XRAY TROJAN GO Account Deleted !$NC"
