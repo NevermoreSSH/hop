@@ -231,3 +231,70 @@ sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/sl-vmessgrpc.json
 fi
 done
 systemctl restart sl-vmess-grpc.service
+
+#----- Auto Remove Vmess
+data=( `cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" -le "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
+rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
+systemctl restart xray.service
+fi
+done
+
+#----- Auto Remove Vless
+data=( `cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2 | sort | uniq`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^#### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" -le "0" ]]; then
+sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
+systemctl restart xray.service
+service cron restart
+fi
+done
+
+#----- Auto Remove Trojan
+data=( `cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2 | sort | uniq`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^#&# $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" -le "0" ]]; then
+sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
+systemctl restart xray.service
+service cron restart
+fi
+done
+
+#----- Auto Remove Trojan GO
+data=( `cat /etc/trojan-go/akun.conf | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/trojan-go/akun.conf" | cut -d ' ' -f 3 | sort | uniq)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" -le "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/trojan-go/akun.conf
+systemctl restart trojan-go
+service cron restart
+fi
+done
