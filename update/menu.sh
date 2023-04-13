@@ -164,7 +164,7 @@ netf
 ;;
 23)
 clear
-delexp && xp
+delexp && xp && restart
 ;;
 19)
 clear
