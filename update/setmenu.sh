@@ -70,7 +70,7 @@ about
 certv2ray
 ;;
 14)
-wget -q -O /usr/bin/install-sldns "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns" && chmod +x /usr/bin/install-sldns && install-sldns
+wget -q -O /usr/bin/install-sldns "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns" && chmod +x /usr/bin/install-sldns && install-sldns && restart
 ;;
 15)
 bbr2
