@@ -18,7 +18,7 @@ echo -e "$yy 7$y.  Limit Bandwith Speed Server"
 echo -e "$yy 8$y.  Check Usage of VPS Ram"
 echo -e "$yy 9$y.  Reboot VPS"
 echo -e "$yy 10$y. Speedtest VPS"
-echo -e "$yy 11$y. Displaying System Information"
+echo -e "$yy 11$y. Restart Service VPN"
 echo -e "$yy 12$y. Info Script Auto Install"
 echo -e "$yy 13$y. Renew Certificate XRAYS"
 echo -e "$yy 14$y. Renew Certificate NameServer(NS)"
@@ -61,7 +61,7 @@ reboot
 speedtest
 ;;
 11)
-info
+restart
 ;;
 12)
 about
