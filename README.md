@@ -43,16 +43,29 @@ or
 ## 1.
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Debian 9,10,11-purple">
 
-  ```html
-apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
-```
+ ```html
+  apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
+  
+  ```
   or
+
+```html
+apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
+
+```
   
   <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Ubuntu 18 & 20 LTS-purple">
 
   ```html
-apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
-```
+  apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && sleep 2 && reboot
+
+  ```
+
+   or
+   ```html
+  apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
+
+  ```
   
 ### 2.
 
@@ -191,7 +204,6 @@ reboot
 
 • OpenVPN Over Websocket (Cloudflare)
 
-• SSLH
 
 • SSH CloudFront Over Websocket (Aws CloudFront Only) [OFF]
 
@@ -202,10 +214,6 @@ reboot
 • XRAY VLESS
 
 • XRAY TROJAN
-
-• XRAY VMESS GRPC
-
-• XRAY VLESS GRPC
 
 • SHADOWSOCKS 
 
@@ -239,7 +247,7 @@ reboot
 
 ### Os Supported
 
-• Debian 10 & 9
+• Debian 11, 10 & 9
 
 • Ubuntu 18.04 & 20.04
 
