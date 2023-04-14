@@ -44,8 +44,7 @@ or
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Debian 9,10,11-purple">
 
  ```html
-  apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
-  
+apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot 
   ```
   or
 
