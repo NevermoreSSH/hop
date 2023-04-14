@@ -447,8 +447,10 @@ wget -O running "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/
 wget -O updatemenu "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/updatemenu.sh"
 wget -O sl-fix "https://raw.githubusercontent.com/NevermoreSSH/hop/main/sslh-fix/sl-fix"
 wget -O install-sldns "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns"
+wget -O fssw "https://raw.githubusercontent.com/NevermoreSSH/hopp/main/fssw/fssw.sh"
 
 chmod +x sl-fix
+chmod +x fssw
 chmod +x install-sldns
 chmod +x ipsaya
 chmod +x sshovpnmenu
