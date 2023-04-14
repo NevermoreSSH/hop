@@ -24,11 +24,12 @@ echo -e "$yy 13$y. Renew Certificate XRAYS"
 echo -e "$yy 14$y. Renew Certificate NameServer(NS)"
 echo -e "$yy 15$y. Install BBRPLUS 5.15.96 (DO IT AT YOUR OWN RISK)"
 echo -e "$yy 16$y. Install Custom XrayCore Mod by dharak36"
-echo -e "$yy 17$y. Menu"
-echo -e "$yy 18$y. Exit"
+echo -e "$yy 17$y. FIX Error SSH+SSL/TLS After Change Port"
+echo -e "$yy 18$y. Menu"
+echo -e "$yy 19$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
-read -p "Select From Options [ 1 - 18 ] : " menu
+read -p "Select From Options [ 1 - 19 ] : " menu
 echo -e ""
 case $menu in
 1)
@@ -80,10 +81,13 @@ bbr2
 mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/v1.0.0/xray.linux.64bit" && chmod 755 /usr/local/bin/xray && restart
 ;;
 17)
+fssw
+;;
+18)
 clear
 menu
 ;;
-18)
+19)
 clear
 exit
 ;;
