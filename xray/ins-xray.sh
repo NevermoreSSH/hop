@@ -107,7 +107,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vmess/",
+          "path": "/vmess",
           "headers": {
             "Host": ""
           }
@@ -136,7 +136,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vmess/",
+          "path": "/vmess",
           "headers": {
             "Host": ""
           }
@@ -178,7 +178,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vless/",
+          "path": "/vless",
           "headers": {
             "Host": ""
           }
@@ -214,7 +214,7 @@ cat > /etc/xray/config.json << END
         "kcpSettings": {},
         "httpSettings": {},
         "wsSettings": {
-          "path": "/vless/",
+          "path": "/vless",
           "headers": {
             "Host": ""
           }
