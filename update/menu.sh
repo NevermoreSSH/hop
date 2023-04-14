@@ -18,6 +18,12 @@ WB='\e[37;1m'
 domain=$(cat /etc/xray/domain)
 sldomain=$(cat /root/nsdomain)
 IPVPS=$(curl -s ipinfo.io/ip)
+# TOTAL ACC CREATE SSH/XRAYS
+ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+vmess=$(grep -c -E "^### " "/etc/xray/config.json")
+vless=$(grep -c -E "^#### " "/etc/xray/config.json")
+tr=$(grep -c -E "^#&# " "/etc/xray/config.json")
+trgo=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
 # RAM Info
@@ -45,7 +51,8 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}Daily Data Usage    : $ttoday ${NC}"
 echo -e "  ${RB}♦️${NC} ${YB}Monthly Data Usage  : $tmon ${NC}"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "                     ${WB} ♦️ VPS Menu ♦️ ${NC}             "
+echo -e "   ${YB} SSH     VMESS     VLESS     TROJAN     TROJANGO          "
+echo -e "${y}     $ssh        $vmess         $vless         $tr           $trgo         "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "$yy 1$y.  SSH & OpenVPN MENU  $wh"
 echo -e "$yy 2$y.  L2TP MENU$wh"
@@ -72,6 +79,7 @@ echo -e "$yy 22$y. NETFLIX CHECKER$wh"
 echo -e "$yy 23$y. DELETE EXPIRED USERS$wh"
 echo -e "$yy 24$y. EXIT$wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "${YB}"
 read -p "Select From Options [ 1 - 24 ] : " menu
 case $menu in
 1)
