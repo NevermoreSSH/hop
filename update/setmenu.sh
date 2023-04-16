@@ -22,11 +22,12 @@ echo -e "$yy 11$y. Restart Service VPN"
 echo -e "$yy 12$y. Info Script Auto Install"
 echo -e "$yy 13$y. Renew Certificate XRAYS"
 echo -e "$yy 14$y. Renew Certificate NameServer(NS)"
-echo -e "$yy 15$y. Install BBRPLUS 5.15.96 (DO IT AT YOUR OWN RISK)"
-echo -e "$yy 16$y. Install Custom XrayCore Mod by dharak36"
-echo -e "$yy 17$y. FIX Error SSH+SSL/TLS After Change Port"
-echo -e "$yy 18$y. Menu"
-echo -e "$yy 19$y. Exit"
+echo -e "$yy 15$y. Install BBRPLUS 5.15.96 "
+echo -e "$yy 16$y. Change XrayCore Official"
+echo -e "$yy 17$y. Change XrayCore Mod by dharak36"
+echo -e "$yy 18$y. FIX Error SSH+SSL/TLS After Change Port"
+echo -e "$yy 19$y. Menu"
+echo -e "$yy 20$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
 read -p "Select From Options [ 1 - 19 ] : " menu
@@ -78,16 +79,19 @@ install-sldns && restart
 bbr2 && reboot
 ;;
 16)
-mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/v1.0.0/xray.linux.64bit" && chmod 755 /usr/local/bin/xray && restart
+mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/Xray_Official_1.7.5/xray" && chmod 755 /usr/local/bin/xray && restart
 ;;
 17)
-fssw
+mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/v1.0.0/xray.linux.64bit" && chmod 755 /usr/local/bin/xray && restart
 ;;
 18)
+fssw
+;;
+19)
 clear
 menu
 ;;
-19)
+20)
 clear
 exit
 ;;
