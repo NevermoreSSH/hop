@@ -75,7 +75,7 @@ certv2ray && restart
 install-sldns && restart
 ;;
 15)
-bbr2
+bbr2 && reboot
 ;;
 16)
 mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/v1.0.0/xray.linux.64bit" && chmod 755 /usr/local/bin/xray && restart
