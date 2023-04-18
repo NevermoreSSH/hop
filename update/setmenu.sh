@@ -30,7 +30,7 @@ echo -e "$yy 19$y. Menu"
 echo -e "$yy 20$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
-read -p "Select From Options [ 1 - 19 ] : " menu
+read -p "Select From Options [ 1 - 20 ] : " menu
 echo -e ""
 case $menu in
 1)
