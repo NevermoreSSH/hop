@@ -4,7 +4,7 @@
 <h2 align="center">
 Auto Script Install All VPN Service
 Mod By NevermoreSSH
-<img src="https://img.shields.io/badge/Beta-v0.2-purple.svg"></h2>
+<img src="https://img.shields.io/badge/PreRelease-v0.4-purple.svg"></h2>
 
 </p> 
 <h2 align="center"> Supported Linux Distribution</h2>
@@ -35,10 +35,15 @@ Mod By NevermoreSSH
 * SORRY I DELETED THE SQUID PROXY, please edit this script manually
 
 # Special For OS
-* • Debian 9, 10 & 11
-or
-* • Ubuntu 18.04 & 20.04
-* • Working For VPS AWS, AZURE, DigitalOcean, Centerhop
+*  Debian 9 / 10 / 11
+*  Ubuntu 18.04 / 20.04
+* Tested For VPS AWS, AZURE, DigitalOcean, Centerhop
+
+# New Update & Fix Bug
+* Support custom path / worryfree VMESS VLESS (need change XrayCore Mod by dharak36 on settings)
+* New BBRPLUS 5.15.96 by UJ6XN
+* Fixed Auto Deleted Exipired Account
+* New Interface Menu with Bandwidth
 ## Installation 
 ## 1.
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Debian 9,10,11-purple">
