@@ -304,9 +304,9 @@ reboot
 
 • XRAYS Trojan              : 2083
 
-• XRAYS Vmess GRPC TLS      : 1180,3380
+• XRAYS Vmess GRPC TLS      : 1180,3380 [OFF]
 
-• XRAYS Vless GRPC TLS      : 2280,4480
+• XRAYS Vless GRPC TLS      : 2280,4480 [OFF]
 
 • OHP SSH                   : 8181
 
