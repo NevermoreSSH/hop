@@ -43,7 +43,8 @@ Mod By NevermoreSSH
 * Support custom path / worryfree VMESS VLESS (need change XrayCore Mod by dharak36 on settings)
 * New BBRPLUS 5.15.96 by UJ6XN
 * Fixed Auto Deleted Exipired Account
-* New Interface Menu with Bandwidth
+* Fixed Add Domain & NameServer while installing script
+* New Interface
 ## Installation 
 ## 1.
 <img src="https://img.shields.io/badge/Update%20_&_%20Upgrade Debian 9,10,11-purple">
