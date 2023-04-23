@@ -9,6 +9,10 @@ Script Auto Installer SlowDNS
 ```html
 wget -q -O /usr/bin/install-sldns "https://raw.githubusercontent.com/NevermoreSSH/hop/main/SLDNS/install-sldns" && chmod +x /usr/bin/install-sldns && install-sldns
 ```
+How to run: 
+```html
+install-sldns
+```
 
 # INFO
 * INI SCRIPT BERSIFAT GRATIS DAN INI SCRIPT DI LARANG DI JUAL PERBELIKAN
