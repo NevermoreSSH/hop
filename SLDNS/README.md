@@ -14,10 +14,6 @@ How to run:
 install-sldns
 ```
 
-# INFO
-* INI SCRIPT BERSIFAT GRATIS DAN INI SCRIPT DI LARANG DI JUAL PERBELIKAN
-* Ini Script bisa di Mod/Modifikasi/edit dengan bebas
-
 # INFO Khusus SlowDNS
 • SSH Over DNS (SlowDNS)
 * untuk kecepatan nya di batasi
