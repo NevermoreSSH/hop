@@ -321,7 +321,7 @@ reboot
 
  ### Server Information & Other Features
 
-• Timezone                : Asia/Jakarta (GMT +7)
+• Timezone                : Asia/Kuala_Lumpur (GMT +8)
 
 • Fail2Ban                : [ON]
 
