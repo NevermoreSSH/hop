@@ -333,7 +333,7 @@ reboot
 
 • IPv6                    : [OFF]
 
-• Autoreboot On 05.00 GMT +7
+• Autoreboot On 05.00 GMT +8
 
 • Auto Delete Expired Account
 
