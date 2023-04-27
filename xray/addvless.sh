@@ -49,8 +49,8 @@ sed -i '/#xray-vless-tls$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#xray-vless-nontls$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-xrayvless1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&type=ws#${user}"
-xrayvless2="vless://${uuid}@${domain}:$nontls?path=/vless&encryption=none&type=ws#${user}"
+xrayvless1="vless://${uuid}@${domain}:$tls?&host=${domain}&path=/vless&security=tls&encryption=none&type=ws#XRAY_VLESS_${user}"
+xrayvless2="vless://${uuid}@${domain}:$nontls?&host=${domain}&path=/vless&encryption=none&type=ws#XRAY_VLESS_${user}"
 systemctl restart xray.service
 service cron restart
 clear
