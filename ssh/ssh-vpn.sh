@@ -426,6 +426,8 @@ wget -O renewtrgo "https://${akbarvpnnn}/renewtrgo.sh"
 wget -O cektrgo "https://${akbarvpnnn}/cektrgo.sh"
 wget -O portsshnontls "https://raw.githubusercontent.com/NevermoreSSH/hop/main/websocket/portsshnontls.sh"
 wget -O portsshws "https://raw.githubusercontent.com/NevermoreSSH/hop/main/websocket/portsshws.sh"
+wget -O userv2ray "https://${akbarvpnn}/userv2ray.sh"
+wget -O uservless "https://${akbarvpnn}/uservless.sh"
 
 wget -O ipsaya "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/ipsaya.sh"
 wget -O sshovpnmenu "https://raw.githubusercontent.com/NevermoreSSH/hop/main/update/sshovpn.sh"
@@ -528,6 +530,8 @@ chmod +x addtrgo
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
+chmod +x userv2ray
+chmod +x uservless
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 1 * * * root delexp && xp && restart" >> /etc/crontab
 echo "0 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
