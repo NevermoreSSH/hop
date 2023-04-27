@@ -52,7 +52,7 @@ sed -i '/#xray-vmess-nontls$/a\### '"$user $exp"'\
 cat>/etc/xray/vmess-$user-tls.json<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "XRAY_VMESS_${user}",
       "add": "${domain}",
       "port": "${tls}",
       "id": "${uuid}",
@@ -67,7 +67,7 @@ EOF
 cat>/etc/xray/vmess-$user-nontls.json<<EOF
       {
       "v": "2",
-      "ps": "${user}",
+      "ps": "XRAY_VMESS_${user}",
       "add": "${domain}",
       "port": "${nontls}",
       "id": "${uuid}",
