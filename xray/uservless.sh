@@ -7,7 +7,7 @@
 # =========================================
 clear
 MYIP=$(wget -qO- ipv4.icanhazip.com);
-NUMBER_OF_CLIENTS=$(grep -c -E "^#### " "/usr/local/etc/xray/config.json")
+NUMBER_OF_CLIENTS=$(grep -c -E "^#### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 echo -e "---------------------------------------------------"
                 echo -e "---------=[ Check XRAYS/Vless WS Config ]=---------"
@@ -25,7 +25,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#### " "/usr/local/etc/xray/config.json")
         echo " Press CTRL+C to return"
 		echo -e "---------------------------------------------------"
         echo "     No  Expired   User"
-        grep -E "^#### " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
+        grep -E "^#### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
         until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
                 if [[ ${CLIENT_NUMBER} == '1' ]]; then
                         read -rp "Select one client [1]: " CLIENT_NUMBER
@@ -34,11 +34,13 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#### " "/usr/local/etc/xray/config.json")
                 fi
         done
 clear
-user=$(grep -E "^#### " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
+user=$(grep -E "^#### " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 domain=$(cat /etc/xray/domain)
-uuid=$(grep "},{" /usr/local/etc/xray/config.json | cut -b 11-46 | sed -n "${CLIENT_NUMBER}"p)
-exp=$(grep -E "^#### " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+uuid=$(grep "},{" /etc/xray/config.json | cut -b 11-46 | sed -n "${CLIENT_NUMBER}"p)
+exp=$(grep -E "^#### " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 hariini=`date -d "0 days" +"%Y-%m-%d"`
+tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
+nontls="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 
 xrayvless1="vless://${uuid}@${domain}:$tls?&host=${domain}&path=/vless&security=tls&encryption=none&type=ws#XRAY_VLESS_${user}"
 xrayvless2="vless://${uuid}@${domain}:$nontls?&host=${domain}&path=/vless&encryption=none&type=ws#XRAY_VLESS_${user}"
