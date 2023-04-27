@@ -11,8 +11,9 @@ echo -e "$yy 1$y. Create Account XRAYS Vless Websocket"
 echo -e "$yy 2$y. Delete Account XRAYS Vless Websocket"
 echo -e "$yy 3$y. Extending Account XRAYS Vless Active Life"
 echo -e "$yy 4$y. Check User Login XRAYS Vless"
-echo -e "$yy 5$y. Menu"
-echo -e "$yy 6$y. Exit"
+echo -e "$yy 5$y. Check Config XRAYS Vless Websocket"
+echo -e "$yy 6$y. Menu"
+echo -e "$yy 7$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 read -p "Select From Options [ 1 - 6 ] : " menu
 echo -e ""
@@ -30,10 +31,13 @@ renewvless
 cekvless
 ;;
 5)
+uservless
+;;
+6)
 clear
 menu
 ;;
-6)
+7)
 clear
 exit
 ;;
