@@ -35,12 +35,13 @@ Mod By NevermoreSSH
 * SORRY I DELETED THE SQUID PROXY, please edit this script manually
 
 # Special For OS
-*  Debian 9 / 10 / 11
+*  Debian 9 / 10 / 11 (Recommended Debian 10 for fast installing)
 *  Ubuntu 18.04 / 20.04
 * Tested For VPS AWS, AZURE, DigitalOcean, Centerhop
 
 # New Update & Fix Bug
 * Support custom path / worryfree VMESS VLESS (need change XrayCore Mod by dharak36 on settings)
+* Can downgrade XrayCore Official v1.7.5 if latest xraycore problem.
 * New BBRPLUS 5.15.96 by UJ6XN
 * Fixed Auto Deleted Exipired Account
 * Fixed Add Domain & NameServer while installing script
