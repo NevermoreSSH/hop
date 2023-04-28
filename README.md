@@ -35,7 +35,7 @@ Mod By NevermoreSSH
 * SORRY I DELETED THE SQUID PROXY, please edit this script manually
 
 # Special For OS
-*  Debian 9 / 10 / 11 (Recommended Debian 10 for fast installing)
+*  Debian 9 / 10 / 11 (Recommended Debian 10 for faster installing)
 *  Ubuntu 18.04 / 20.04
 * Tested For VPS AWS, AZURE, DigitalOcean, Centerhop
 
