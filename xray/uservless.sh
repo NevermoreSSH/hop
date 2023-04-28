@@ -42,8 +42,8 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 nontls="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 
-xrayvless1="vless://${uuid}@${domain}:$tls?&host=${domain}&path=/vless&security=tls&encryption=none&type=ws#XRAY_VLESS_${user}"
-xrayvless2="vless://${uuid}@${domain}:$nontls?&host=${domain}&path=/vless&encryption=none&type=ws#XRAY_VLESS_${user}"
+xrayvless1="vless://${uuid}@${domain}:$tls?type=ws&encryption=none&security=tls&host=${domain}&path=/vless&allowInsecure=1&sni=${sni}#XRAY_VLESS_${user}"
+xrayvless2="vless://${uuid}@${domain}:$nontls?type=ws&encryption=none&security=none&host=${domain}&path=/vless#XRAY_VLESS_${user}"
 
 clear
 echo -e ""
