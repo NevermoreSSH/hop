@@ -66,7 +66,7 @@ Detail Backup
 ==================================
 IP VPS        : $IP
 Link Backup   : $link
-Tanggal       : $date
+Date          : $date
 ==================================
 "
 echo "Please check Inbox $email"
