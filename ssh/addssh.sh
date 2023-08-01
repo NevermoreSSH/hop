@@ -52,7 +52,7 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e ""
-echo -e "Premium Server SSH Websocket"
+echo -e "Premium Server SSH/OVPN Websocket"
 echo -e "=============================="
 echo -e "Username: $Login"
 echo -e "Password: $Pass"
@@ -72,7 +72,7 @@ echo -e "SSL/TLS: 443"
 echo -e "SSH Websocket SSL/TLS: 443"
 echo -e "SSH Websocket HTTP: 8880"
 echo -e "BadVPN UDPGW: 7100,7200,7300"
-echo -e "Proxy Squid: [OFF]"
+echo -e "Proxy Squid: 3128, 8080"
 echo -e "OHP SSH: 8181"
 echo -e "OHP Dropbear: 8282"
 echo -e "OHP OpenVPN: 8383"
