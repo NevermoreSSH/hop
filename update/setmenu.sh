@@ -25,13 +25,14 @@ echo -e "$yy 14$y. Renew Certificate NameServer(NS)"
 echo -e "$yy 15$y. Install BBRPLUS 5.15.96 by UJX6N "
 echo -e "$yy 16$y. Change XrayCore Official 1.7.5"
 echo -e "$yy 17$y. Change XrayCore Mod by dharak36"
-echo -e "$yy 18$y. Change Banner SSH Weboscket"
-echo -e "$yy 19$y. Restore SSH+SSL/TLS Port 443"
-echo -e "$yy 20$y. Menu"
-echo -e "$yy 21$y. Exit"
+echo -e "$yy 18$y. Change XrayCore Mod latest 1.7.5.1"
+echo -e "$yy 19$y. Change Banner SSH Weboscket"
+echo -e "$yy 20$y. Restore SSH+SSL/TLS Port 443"
+echo -e "$yy 21$y. Menu"
+echo -e "$yy 22$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
-read -p "Select From Options [ 1 - 21 ] : " menu
+read -p "Select From Options [ 1 - 22 ] : " menu
 echo -e ""
 case $menu in
 1)
@@ -86,16 +87,19 @@ mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xra
 mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/v1.0.0/xray.linux.64bit" && chmod 755 /usr/local/bin/xray && restart
 ;;
 18)
-nano /etc/issue.net
+mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/xraycore_1.7.5.1_linux/xray_1.7.5.1_linux" && chmod 755 /usr/local/bin/xray && restart
 ;;
 19)
-fssw
+nano /etc/issue.net
 ;;
 20)
+fssw
+;;
+21)
 clear
 menu
 ;;
-21)
+22)
 clear
 exit
 ;;
