@@ -275,7 +275,7 @@ reboot
 
 • Websocket OpenVPN         : 2086
 
-• Squid Proxy               : 3128, 8080 [OFF]
+• Squid Proxy               : 3128, 8000 [OFF]
 
 • Badvpn                    : 7100, 7200, 7300
 
