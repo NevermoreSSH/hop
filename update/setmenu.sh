@@ -23,16 +23,14 @@ echo -e "$yy 12$y. Info Script Auto Install"
 echo -e "$yy 13$y. Renew Certificate XRAYS"
 echo -e "$yy 14$y. Renew Certificate NameServer(NS)"
 echo -e "$yy 15$y. Install BBRPLUS 5.15.96 by UJX6N "
-echo -e "$yy 16$y. Change XrayCore Official 1.7.5"
-echo -e "$yy 17$y. Change XrayCore Mod 1.6.5.1"
-echo -e "$yy 18$y. Change XrayCore Mod 1.7.2-1"
-echo -e "$yy 19$y. Change Banner SSH Weboscket"
-echo -e "$yy 20$y. Restore SSH+SSL/TLS Port 443"
-echo -e "$yy 21$y. Menu"
-echo -e "$yy 22$y. Exit"
+echo -e "$yy 16$y. Xray-core Changer "
+echo -e "$yy 17$y. Change Banner SSH Weboscket"
+echo -e "$yy 18$y. Restore SSH+SSL/TLS Port 443"
+echo -e "$yy 19$y. Menu"
+echo -e "$yy 20$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
-read -p "Select From Options [ 1 - 22 ] : " menu
+read -p "Select From Options [ 1 - 20 ] : " menu
 echo -e ""
 case $menu in
 1)
@@ -81,25 +79,19 @@ install-sldns && restart
 bbr2 && reboot
 ;;
 16)
-mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/Xray-linux-64-v1.7.5/Xray-linux-64-v1.7.5" && chmod 755 /usr/local/bin/xray && xray version
+wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger
 ;;
 17)
-mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/Xray-linux-64-v1.6.5.1/Xray-linux-64-v1.6.5.1" && chmod 755 /usr/local/bin/xray && xray version
-;;
-18)
-mv /usr/local/bin/xray /usr/local/bin/xray.bakk && wget -q -O /usr/local/bin/xray "https://github.com/NevermoreSSH/Xcore-custompath/releases/download/Xray-linux-64-v1.7.2-1/Xray-linux-64-v1.7.2-1" && chmod 755 /usr/local/bin/xray && xray version
-;;
-19)
 nano /etc/issue.net
 ;;
-20)
+18)
 fssw
 ;;
-21)
+19)
 clear
 menu
 ;;
-22)
+20)
 clear
 exit
 ;;
