@@ -26,8 +26,8 @@ echo -e "$yy 15$y. Install BBRPLUS 5.15.96 by UJX6N "
 echo -e "$yy 16$y. Xray-core Changer "
 echo -e "$yy 17$y. Change Banner SSH Weboscket"
 echo -e "$yy 18$y. Restore SSH+SSL/TLS Port 443"
-echo -e "$yy 19$y. Menu"
-echo -e "$yy 20$y. Exit"
+echo -e "$yy 19$y. Swap RAM"
+echo -e "$yy 20$y. Menu"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
 read -p "Select From Options [ 1 - 20 ] : " menu
@@ -89,11 +89,11 @@ fssw
 ;;
 19)
 clear
-menu
+wget -q -O /usr/bin/swapram "https://raw.githubusercontent.com/NevermoreSSH/swapram/main/swapram.sh" && chmod +x /usr/bin/swapram && swapram
 ;;
 20)
 clear
-exit
+menu
 ;;
 *)
 clear
