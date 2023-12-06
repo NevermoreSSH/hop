@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 # Getting
 clear
 IP=$(wget -qO- ipinfo.io/ip);
-date=$(date +"%Y-%m-%d")
+date=$(date +"%Y-%m-%d-%H:%M:%S")
 clear
 email=$(cat /home/email)
 if [[ "$email" = "" ]]; then
