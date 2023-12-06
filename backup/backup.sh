@@ -16,15 +16,15 @@ clear
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d-%H:%M:%S")
 clear
-email=$(cat /home/email)
-if [[ "$email" = "" ]]; then
-echo "Please Enter Email for Receive Backup"
-read -rp "Email : " -e email
-cat <<EOF>>/home/email
-$email
-EOF
-fi
-clear
+#email=$(cat /home/email)
+#if [[ "$email" = "" ]]; then
+#echo "Please Enter Email for Receive Backup"
+#read -rp "Email : " -e email
+#cat <<EOF>>/home/email
+#$email
+#EOF
+#fi
+#clear
 echo "Please Wait, Backup Process is in progress !!"
 rm -rf /root/backup
 mkdir /root/backup
