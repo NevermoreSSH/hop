@@ -14,6 +14,10 @@ BB='\e[34;1m'
 MB='\e[35;1m'
 CB='\e[35;1m'
 WB='\e[37;1m'
+# Getting CPU Information
+cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
+cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
+cpu_usage+=" %"
 #Domain & IPVPS
 domain=$(cat /etc/xray/domain)
 sldomain=$(cat /root/nsdomain)
@@ -51,6 +55,7 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
 echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}CPULOAD :  $cpu_usage ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DNSTT   :  $sldomain ${NC} "
