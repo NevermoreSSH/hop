@@ -15,9 +15,10 @@ MB='\e[35;1m'
 CB='\e[35;1m'
 WB='\e[37;1m'
 # Getting CPU Information
+cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
-cpu_usage+=" %"
+cpu_usage+="%"
 load_cpu=$(printf '%-3s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 #Domain & IPVPS
 domain=$(cat /etc/xray/domain)
@@ -46,21 +47,20 @@ tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}
 dmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $3" "substr ($4, 1, 1)}')"
 umon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
-
-echo ""
+echo " "
 echo -e "$y                        MAIN MENU $wh"
 echo -e "$y                Script Mod By NevermoreSSH $wh"
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                ${WB} ♦️ Server Information ♦️ ${NC}             "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
-echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
-echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}CPULOAD :  $load_cpu ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}DNSTT   :  $sldomain ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}IPVPS   :  $IPVPS ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}OS       :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
+echo -e "  ${RB}♦️${NC} ${YB}KERNEL   :  $(uname -r) ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}UPTIME   :  $uptime ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}CPU      :  ${cores} core ($load_cpu)  ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}RAM      :  $uram MB / $tram MB ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DOMAIN   :  $domain ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}DNSTT    :  $sldomain ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}IPVPS    :  $IPVPS ${NC} "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
 echo -e "                  ${WB} ♦️ Total Bandwidth ♦️ ${NC}            "
 echo -e "${BB}————————————————————————————————————————————————————————${NC}"
