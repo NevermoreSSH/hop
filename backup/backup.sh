@@ -15,6 +15,7 @@ LIGHT='\033[0;37m'
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d-%H:%M:%S")
+domain=$(cat /etc/xray/domain)
 clear
 #email=$(cat /home/email)
 #if [[ "$email" = "" ]]; then
@@ -45,9 +46,9 @@ cp -r /etc/trojan-go backup/trojan-go
 cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp -r /home/vps/public_html backup/public_html
 cd /root
-zip -r $IP-$date.zip backup > /dev/null 2>&1
-rclone copy /root/$IP-$date.zip dr:backup/
-url=$(rclone link dr:backup/$IP-$date.zip)
+zip -r $IP-$date-$domain-hop.zip backup > /dev/null 2>&1
+rclone copy /root/$IP-$date-$domain-hop.zip dr:backup/
+url=$(rclone link dr:backup/$IP-$date-$domain-hop.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 echo -e "
@@ -59,7 +60,7 @@ Date          : $date
 ==================================
 " | mail -s "Backup Data" $email
 rm -rf /root/backup
-rm -r /root/$IP-$date.zip
+rm -r /root/$IP-$date-$domain-hop.zip
 clear
 echo -e "
 Detail Backup 
