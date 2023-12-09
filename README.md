@@ -209,10 +209,10 @@ reboot
 • OpenSSH                   : 22, 2253
 • Dropbear                  : 443, 109, 143, 1153
 • Stunnel5                  : 443, 445, 777
-• OpenVPN                   : TCP 1194, UDP 2200, SSL 990
+• OpenVPN                   : TCP 1194, UDP 2200, SSL 990  [OFF]
 • Websocket SSH TLS         : 443
 • Websocket SSH HTTP        : 8880
-• Websocket OpenVPN         : 2086
+• Websocket OpenVPN         : 2086  [OFF]
 • Squid Proxy               : 3128, 8000 [OFF]
 • Badvpn                    : 7100, 7200, 7300
 • Nginx                     : 89
@@ -230,9 +230,9 @@ reboot
 • XRAYS Trojan              : 2083
 • XRAYS Vmess GRPC TLS      : 1180,3380 [OFF]
 • XRAYS Vless GRPC TLS      : 2280,4480 [OFF]
-• OHP SSH                   : 8181
+• OHP SSH                   : 8181 
 • OHP Dropbear              : 8282
-• OHP OpenVPN               : 8383
+• OHP OpenVPN               : 8383  [OFF]
 • Trojan Go                 : 2087
 • CloudFront Over Websocket : [OFF]
 
