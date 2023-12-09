@@ -18,6 +18,7 @@ WB='\e[37;1m'
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
 cpu_usage+=" %"
+load_cpu=$(printf '%-3s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
 #Domain & IPVPS
 domain=$(cat /etc/xray/domain)
 sldomain=$(cat /root/nsdomain)
@@ -55,7 +56,7 @@ echo -e "${BB}——————————————————————
 echo -e "  ${RB}♦️${NC} ${YB}OS      :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) ${NC}         
 echo -e "  ${RB}♦️${NC} ${YB}KERNEL  :  $(uname -r) ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}UPTIME  :  $uptime ${NC} "
-echo -e "  ${RB}♦️${NC} ${YB}CPULOAD :  $cpu_usage ${NC} "
+echo -e "  ${RB}♦️${NC} ${YB}CPULOAD :  $load_cpu ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}RAM     :  $uram MB / $tram MB ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DOMAIN  :  $domain ${NC} "
 echo -e "  ${RB}♦️${NC} ${YB}DNSTT   :  $sldomain ${NC} "
