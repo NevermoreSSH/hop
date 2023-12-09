@@ -540,7 +540,7 @@ echo "0 1 * * * root delexp && xp && restart" >> /etc/crontab
 echo "0 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
 echo "0 6 * * * root backup" >> /etc/crontab
 echo "0 23 * * * root backup" >> /etc/crontab
-
+echo "1 * * * * root systemctl restart server-sldns" >> /etc/crontab
 
 # remove unnecessary files
 cd
