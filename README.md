@@ -201,8 +201,8 @@ reboot
 
 ### Os Supported
 ```
-• Debian 11, 10 & 9
-• Ubuntu 18.04 & 20.04
+• Debian 11, 10, 9
+• Ubuntu 18.04, 20.04
 
 # Service & Port
 • SlowDNS                   : All Port SSH
