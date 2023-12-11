@@ -24,6 +24,9 @@ load_cpu=$(printf '%-3s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END
 domain=$(cat /etc/xray/domain)
 sldomain=$(cat /root/nsdomain)
 IPVPS=$(curl -s ipinfo.io/ip)
+IPVPS=$(curl -s ipinfo.io/ip )
+IPVPS=$(curl -sS ipv4.icanhazip.com)
+IPVPS=$(curl -sS ifconfig.me )
 # TOTAL ACC CREATE SSH/XRAYS
 ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 vmess=$(grep -c -E "^### " "/etc/xray/config.json")
