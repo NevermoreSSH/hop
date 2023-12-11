@@ -13,6 +13,9 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 
 MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(curl -s ipinfo.io/ip )
+MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(curl -sS ifconfig.me )
 clear
 domain=$(cat /etc/xray/domain)
 apt install iptables iptables-persistent -y
