@@ -13,6 +13,9 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
+IP=$(curl -s ipinfo.io/ip )
+IP=$(curl -sS ipv4.icanhazip.com)
+IP=$(curl -sS ifconfig.me )
 echo "Checking VPS"
 IZIN=$( curl ipinfo.io | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
