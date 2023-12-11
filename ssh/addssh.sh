@@ -23,6 +23,9 @@ read -p "Password : " Pass
 read -p "Expired (Days): " masaaktif
 
 IP=$(wget -qO- ipinfo.io/ip);
+IP=$(curl -s ipinfo.io/ip )
+IP=$(curl -sS ipv4.icanhazip.com)
+IP=$(curl -sS ifconfig.me )
 ws="$(cat ~/log-install.txt | grep -w "Websocket TLS" | cut -d: -f2|sed 's/ //g')"
 ws2="$(cat ~/log-install.txt | grep -w "Websocket None TLS" | cut -d: -f2|sed 's/ //g')"
 
