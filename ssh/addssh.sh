@@ -54,6 +54,62 @@ expi="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
+
+cat > /home/vps/public_html/ssh-$Login.txt <<-END
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+            https://github.com/NevermoreSSH
+====================================================================
+              Format SSH OVPN Account
+====================================================================
+
+═══════════════════════════════════════════════════════
+Premium Server SSH Websocket
+==============================
+Username: $Login
+Password: $Pass
+Created: $hariini
+Expired: $expi
+===========HOST-SSH===========
+IP/Host: $IP
+Domain SSH: $domain
+Domain Name System(DNS): 8.8.8.8
+Name Server(NS): $sldomain
+DNS PUBLIC KEY: $slkey
+=========Service-Port=========
+SlowDNS: 443,22,109,143
+OpenSSH: 22
+Dropbear: 443, 109, 143
+SSL/TLS: 443
+SSH Websocket SSL/TLS: 443
+SSH Websocket HTTP: 8880
+BadVPN UDPGW: 7100,7200,7300
+Proxy Squid: 3128, 8000 [OFF]
+OHP SSH: 8181
+OHP Dropbear: 8282
+OHP OpenVPN: 8383
+OVPN Websocket: 2086
+OVPN Port TCP: $ovpn
+OVPN Port UDP: $ovpn2
+OVPN Port SSL: 990
+OVPN TCP: http://$IP:89/tcp.ovpn
+OVPN UDP: http://$IP:89/udp.ovpn
+OVPN SSL: http://$IP:89/ssl.ovpn
+==============================
+Payload Websocket SSL/TLS
+==============================
+GET wss://bug.com/ HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf]
+==============================
+Payload Websocket HTTP
+==============================
+GET / HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf]
+==============================
+Script Mod By NevermoreSSH
+
+END
+
 echo -e ""
 echo -e "Premium Server SSH Websocket"
 echo -e "=============================="
@@ -86,6 +142,7 @@ echo -e "OVPN Port SSL: 990"
 echo -e "OVPN TCP: http://$IP:89/tcp.ovpn"
 echo -e "OVPN UDP: http://$IP:89/udp.ovpn"
 echo -e "OVPN SSL: http://$IP:89/ssl.ovpn"
+echo -e "SSH Config : http://${domain}:81/ssh-$Login.txt"
 echo -e "=============================="
 echo -e "Payload Websocket SSL/TLS"
 echo -e "=============================="
