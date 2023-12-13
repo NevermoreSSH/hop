@@ -94,9 +94,6 @@ OVPN Websocket: 2086
 OVPN Port TCP: $ovpn
 OVPN Port UDP: $ovpn2
 OVPN Port SSL: 990
-OVPN TCP: http://$IP:89/tcp.ovpn
-OVPN UDP: http://$IP:89/udp.ovpn
-OVPN SSL: http://$IP:89/ssl.ovpn
 ==============================
 Payload Websocket SSL/TLS
 ==============================
