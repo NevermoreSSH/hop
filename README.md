@@ -41,7 +41,6 @@ Mod By NevermoreSSH
 
 # New Update & Fix Bug
 * Support custom path / worryfree VMESS VLESS (need change XrayCore Mod by dharak36 on settings)
-* Can downgrade XrayCore Official v1.7.5 if latest xraycore problem.
 * New BBRPLUS 5.15.96 by UJ6XN
 * Fixed Auto Deleted Expired Account SSH & XRAYS
 * Fixed Add Domain & NameServer while installing script
