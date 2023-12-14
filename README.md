@@ -4,7 +4,7 @@
 <h2 align="center">
 Auto Script Install All VPN Service
 Mod By NevermoreSSH
-<img src="https://img.shields.io/badge/PreRelease-v0.4-purple.svg"></h2>
+<img src="https://img.shields.io/badge/Release-v1.4-purple.svg"></h2>
 
 </p> 
 <h2 align="center"> Supported Linux Distribution</h2>
