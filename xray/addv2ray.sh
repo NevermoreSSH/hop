@@ -88,6 +88,41 @@ xrayv2ray1="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
 xrayv2ray2="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
 systemctl restart xray.service
 service cron restart
+
+cat > /home/vps/public_html/vmess-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format Vmess WS
+====================================================================
+
+             Link Vmess Account
+====================================================================
+Remarks     : ${user}
+IP/Host     : ${MYIP}
+Address     : ${domain}
+Port TLS    : ${tls}
+Port No TLS : ${nontls}
+User ID     : ${uuid}
+Alter ID    : 0
+Security    : auto
+Network     : ws
+Path        : /vmess
+Multipath   : /yourpath (XrayCore Mod)
+Created     : $hariini
+Expired     : $exp
+=========================
+Link TLS    : ${xrayv2ray1}
+=========================
+Link No TLS : ${xrayv2ray2}
+=========================
+
+END
+
 clear
 echo -e ""
 echo -e "======-XRAYS/VMESS-======"
