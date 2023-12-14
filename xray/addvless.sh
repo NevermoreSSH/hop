@@ -56,6 +56,40 @@ xrayvless1="vless://${uuid}@${domain}:$tls?type=ws&encryption=none&security=tls&
 xrayvless2="vless://${uuid}@${domain}:$nontls?type=ws&encryption=none&security=none&host=${domain}&path=/vless#XRAY_VLESS_${user}"
 systemctl restart xray.service
 service cron restart
+
+cat > /home/vps/public_html/vless-$user.txt <<-END
+
+====================================================================
+             P R O J E C T  O F  N E V E R M O R E S S H
+                       [Freedom Internet]
+====================================================================
+             https://github.com/NevermoreSSH/
+====================================================================
+             Format Vless WS
+====================================================================
+
+             Link Vless Account
+====================================================================
+Remarks     : ${user}
+IP/Host     : ${MYIP}
+Address     : ${domain}
+Port TLS    : $tls
+Port No TLS : $nontls
+User ID     : ${uuid}
+Encryption  : none
+Network     : ws
+Path        : /vless
+Multipath   : /yourpath (XrayCore Mod)
+Created     : $hariini
+Expired     : $exp
+=========================
+Link TLS    : ${xrayvless1}
+=========================
+Link No TLS : ${xrayvless2}
+=========================
+
+END
+
 clear
 echo -e ""
 echo -e "======-XRAYS/VLESS-======"
