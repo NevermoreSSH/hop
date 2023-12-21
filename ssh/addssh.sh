@@ -60,9 +60,9 @@ cat > /home/vps/public_html/ssh-$Login.txt <<-END
              P R O J E C T  O F  N E V E R M O R E S S H
                        [Freedom Internet]
 ====================================================================
-            https://github.com/NevermoreSSH
+            https://github.com/NevermoreSSH/hop
 ====================================================================
-              Format SSH OVPN Account
+              Format SSH OVPN Account - hoppV2
 ====================================================================
 
 ═══════════════════════════════════════════════════════
