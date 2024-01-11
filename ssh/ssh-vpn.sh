@@ -538,12 +538,20 @@ chmod +x renewtrgo
 chmod +x cektrgo
 chmod +x userv2ray
 chmod +x uservless
-echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 1 * * * root delexp && xp && restart" >> /etc/crontab
-echo "0 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
+#echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
+echo "0 0 * * * root clearlog" >> /etc/crontab
+echo "0 1 * * * root delexp" >> /etc/crontab
+echo "0 2 * * * root xp" >> /etc/crontab
+echo "0 3 * * * root restart" >> /etc/crontab
+echo "0 4 * * * root sslh-fix-reboot" >> /etc/crontab
+#echo "0 1 * * * root delexp && xp && restart" >> /etc/crontab
+#echo "0 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
+echo "0 5 * * * root reboot" >> /etc/crontab
 echo "0 6 * * * root backup" >> /etc/crontab
-echo "0 23 * * * root backup" >> /etc/crontab
-echo "1 * * * * root systemctl restart server-sldns" >> /etc/crontab
+echo "5 1 * * * root /usr/bin/delexp" >> /etc/crontab
+echo "5 2 * * * root /usr/bin/xp" >> /etc/crontab
+echo "0 23 * * * root /usr/bin/backup" >> /etc/crontab
+#echo "1 * * * * root systemctl restart server-sldns" >> /etc/crontab
 
 # remove unnecessary files
 cd
